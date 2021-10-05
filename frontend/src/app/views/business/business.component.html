@@ -1,0 +1,38 @@
+<div class="card" *ngIf='business'>
+  <div class="card-body">
+    <form>
+      <h1>Business Approval Request</h1>
+      <br />
+      <div class="row">
+          <div class="col-md-12">
+              <div class="form-group">
+                  <label for="name">Name:</label>
+                  <span for="name">{{business.name}}</span>
+
+              </div>
+          </div>
+          <div class="col-md-12">
+              <div class="form-group">
+                  <label for="name">category:</label>
+                  <span for="name">{{business.category}}</span>
+              </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+                <label for="name">Type Of Business:</label>
+                <span for="name">{{business.typeOfBusiness}}</span>
+            </div>
+        </div>
+       
+          <div class="col-md-12">
+              <div class="form-group">
+                <button class="btn btn-primary btn-round" (click)='Accept()'>Accept</button>
+                <button class="btn btn-primary btn-round" routerLink="/categories">Decline</button>
+              </div>
+          </div>
+      </div>
+  </form>
+    
+ 
+  </div>
+</div>

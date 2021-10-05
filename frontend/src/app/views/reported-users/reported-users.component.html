@@ -1,0 +1,30 @@
+
+<div class="row">
+    <div class="col-md-12">
+        <ngx-spinner>Loading......</ngx-spinner>
+        <div class="card">
+            <div class="card-body">
+            
+                <div class="table-responsive">
+                <table class="table" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                    <thead>
+                        <tr>
+                            <th>Reported User</th>
+                            <th>Reported By</th>
+                            <th>Reason</th>
+                       
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of data">
+                            <td>{{user.id.name}}</td>
+                            <td>{{user.by.name}}</td>
+                            <td>{{user.reason}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+
+                        <div class="card">
+                            <div class="card-body">
+                                <form >
+                                    <h1>Customer Details</h1>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="name">Name:</label>
+                                                <span for="name">{{customer.name}}</span>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="name">Email:</label>
+                                                <span for="name">{{customer.email}}</span>
+                                                <!-- <input type="text" disabled="true" value="{{customer.email}}" /> -->
+                                            </div>
+                                        </div>
+                                        <!-- <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="name">Social Login:</label>
+                                                <span for="name">{{customer.isSocialLogin}}</span>
+                                            </div>
+                                        </div> -->
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="name">Saved List:</label>
+                                                <span for="name"
+                                                    *ngFor="let list of customer.savelist">{{list.name}}&nbsp;</span>
+                                                <!-- <input type="text" disabled="true" value="{{customer.email}}" /> -->
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="name">Want to go List:</label>
+                                                <span for="name"
+                                                    *ngFor="let list of customer.wanttogolist">{{list.name}}&nbsp;</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="name">Visited List:</label>
+                                                <span for="name"
+                                                    *ngFor="let list of customer.visitedlist">{{list.name}}&nbsp;</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+
+                                                <button class="btn btn-primary btn-round"
+                                                    (click)='back()'>Back</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                   

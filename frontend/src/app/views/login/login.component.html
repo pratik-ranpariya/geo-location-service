@@ -1,0 +1,51 @@
+<div class="app-body">
+  <main class="main d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="card-group">
+            <div class="card p-4">
+              <div class="card-body">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                  <h1>Login</h1>
+                  <p class="text-muted">Sign In to your account</p>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-user"></i></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="email" formControlName="email"
+                      autocomplete="username" required>
+
+                  </div>
+                  <div *ngIf="submitted && f.email.errors" class="lbl-err"  [ngStyle]="{'margin-top': '-18px'}">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.pattern">Enter Valid EmailId</div>
+                  </div>
+                  <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-lock"></i></span>
+                    </div>
+                    <input type="password" class="form-control" placeholder="Password" formControlName="password"
+                      autocomplete="current-password" required>
+                  </div>
+                  <div *ngIf="submitted && f.password.errors" class="lbl-err " [ngStyle]="{'margin-top': '-23px'}">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <button type="button" class="btn btn-primary px-4" type="submit">Login</button>
+                    </div>
+                    <div class="col-6 text-right">
+                      <button type="button" class="btn btn-link px-0" routerLink="/forgotpassword">Forgot
+                        password?</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

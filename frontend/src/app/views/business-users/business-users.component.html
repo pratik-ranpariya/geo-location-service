@@ -1,0 +1,56 @@
+
+<div class="row">
+    <div class="col-md-12">
+        <ngx-spinner>Loading......</ngx-spinner>
+        <div class="card">
+            <div class="card-header">
+                <div class="csv">
+                    <label>Upload CSV:</label>
+                    <input type="file" (change)="addfile($event)" placeholder="Upload file"
+                        accept=".csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+                </div>
+            </div>
+           
+            <div class="card-body">
+               
+                <div class="table-responsive">
+                    <table style="width:100%" class="table" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Address</th>
+                                <th>Website</th>
+                                <th>Contact No.</th>
+                                <th>Created By</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let business of data">
+                                <td>{{business.name}}</td>
+                                <td>{{business.email}}</td>
+                                <td>{{business.address}}</td>
+                                <td>{{business.website}}</td>
+                                <td style="width: 20%">{{business.contactNo}}</td>
+                                <td style="width: 10%">{{business.createdBy?.name}}</td>
+
+                                <td style="width: 15%">
+                                    <i class="fa fa-eye fa-lg" (click)='userDetails(business)'
+                                        aria-hidden="true"></i>&nbsp;&nbsp;
+                                    <!-- <i class="fa fa-pencil fa-lg" aria-hidden="true" (click)='editcategory(category)'></i>&nbsp;&nbsp; -->
+                                    <i class="fa fa-trash fa-lg" (click)='deleteUser(business._id)'
+                                        aria-hidden="true"></i>&nbsp;&nbsp;
+                                    <button *ngIf="business.approve==false" class="btn btn-primary btn-round"
+                                        (click)='Accept(business._id)'>Accept</button>
+                                    <button *ngIf="business.approve==true" class="btn btn-primary btn-round"
+                                        (click)='Decline(business._id)'>Decline</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

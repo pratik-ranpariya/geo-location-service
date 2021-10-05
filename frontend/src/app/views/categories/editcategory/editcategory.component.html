@@ -1,0 +1,32 @@
+<div class="modal-header">
+    <h5>Edit Category</h5>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="categoryForm" (ngSubmit)="editCategory()">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" formControlName="name" class="form-control"
+                [ngClass]="{'is-invalid':submitted && f.name.errors}" />
+        </div>
+        <div class="form-group">
+            <label for="imageUrl">Image</label>
+            <input  id="imageUrl" type="file" class="form-control"  (change)="onFileChange($event)">
+            <div *ngIf="f.imageUrl.touched && f.imageUrl.invalid" class="alert alert-danger">
+                <div *ngIf="f.imageUrl.errors.required">File is required.</div>
+            </div>
+        </div>
+
+        <img [src]="imageUrl" *ngIf="imageUrl" style="height: 50px; width:100px">
+        <div class="col-md-12">
+            <div class="modal-footer">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">UPDATE</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>

@@ -1,0 +1,19 @@
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body
+        form(method='POST')
+            legend approve Business
+            .form-group
+                 button.btn.btn-primary(type='submit')  Approve business
+            //- .form-group
+            //-     button.btn.btn-primary(onclick='something()') Decline business
+
+script.
+  var decline = function() {
+    console.log('decline') 
+  }
+
+button(onclick='decline()') Decline business

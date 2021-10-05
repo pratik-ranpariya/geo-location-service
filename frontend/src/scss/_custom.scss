@@ -1,0 +1,58 @@
+// Here you can add other styles
+.dataTables_info{
+    // margin-left:10px!important;
+    float: left;
+}
+.dataTables_paginate {
+    float: right;
+text-align: right;
+// padding-top: 0.25em;
+    // margin-left:10px!important;
+    display: flex!important;
+    padding-left: 0!important;
+    list-style: none!important;
+    border-radius: 0.25rem!important;
+    .paginate_button {
+        &:hover {
+            z-index: 2;
+            color: #167495;
+            text-decoration: none;
+            background-color: #e4e7ea;
+            border-color: #c8ced3;
+        }
+    }
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current{
+    z-index: 1;
+    color: #fff;
+    background-color: #20a8d8;
+    border-color: #20a8d8;
+}
+.dataTables_wrapper  > .dataTables_length{
+    float: left;
+}
+
+.dataTables_wrapper  > .dataTables_filter {
+    float: right;
+text-align: right;
+    input {
+    color: #51cbce  !important;
+    background-color: rgba(222, 222, 222, 0.3)!important;
+    border: medium none!important;
+    max-width: 300px!important;
+    height: 40px !important;
+  
+        }
+    }
+    .paginate_button{
+        margin-top: -7px !important;
+        position: relative!important;
+        // display: block;
+        padding: 0.5rem 0.75rem;
+        margin-left: -1px;
+        line-height: 1.25;
+        color: #20a8d8;
+        background-color: #fff;
+        border: 1px solid #c8ced3;
+    }
